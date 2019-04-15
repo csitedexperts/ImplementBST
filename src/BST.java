@@ -50,27 +50,36 @@ public class BST {
 	The in-order traversal consists of first visiting 
 	the left sub-tree, then the root node, 
 	and finally the right sub-tree:
+	Technique to remember: 
+	In-order => Print the node in between the left and right nodes
 	 */		
 
-	// A utility function to do inorder traversal of BST 
+	// A utility function to do in-order traversal of BST 
 	void traverseInOrder(Node node) { 
 		if (node != null) { 
 			traverseInOrder(node.left); 
 			System.out.print(node.data + " "); 
 			traverseInOrder(node.right); 
+//	In-order => Print the node IN-BETWEEN the left and right nodes
+					
 		} 
 	} 
 	// This method mainly calls PreorderRec() 
 	void preorderTraverse()  { 
 		traversePreOrder(root); 
 	} 
-	/* 	Pre-order traversal visits first the root node, then the left subtree, and finally the right subtree:
+	/* 	Pre-order traversal visits first the root node, 
+	 * then the left subtree, and finally the right subtree:
+	 * 
+	 * Pre-order => The root node will be first
 	 */	
 	public void traversePreOrder(Node node) {
 		if (node != null) {
 			System.out.print(" " + node.data);
 			traversePreOrder(node.left);
 			traversePreOrder(node.right);
+//			Pre-order => Print the node BEFORE the left and right nodes
+
 		}
 	}
 
@@ -89,6 +98,7 @@ public class BST {
 			traversePostOrder(node.right);
 			
 			System.out.print(" " + node.data);
+//			Pre-order => Print the node AFTER the left and right nodes
 		}
 	}
 	
